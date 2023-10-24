@@ -1,13 +1,6 @@
 {
   "customers": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Wise",
-      "email": "johnwise@gmail.com",
-      "phoneNumber": "789979678788"
-    },
-    {
       "id": 2,
       "firstName": "Alice",
       "lastName": "Mise",
@@ -41,13 +34,6 @@
       "phoneNumber": "test",
       "email": "test@gmail.com",
       "id": 6
-    },
-    {
-      "firstName": "fhd",
-      "lastName": "dfh",
-      "phoneNumber": "fh",
-      "email": "fdhdfhdfhdfh",
-      "id": 7
     }
   ]
 }

@@ -26,8 +26,25 @@ export class CustomerServiceService {
     return this.http.get<Customer>(`${this.MOCK_BASE_URL}${this.CUSTOMERS}/${id}`);
   }
 
-  updateCustomer(customer: Customer): Observable<Customer> {
+  updateCustomer(customer: Customer): Observable<any> {
+    console.log("welcomeee:"+customer.id);
+    console.log("welcomeee:"+customer.firstName);
+    console.log("welcomeee:"+customer.lastName);
+    console.log("welcomeee:"+customer.email);
+    console.log("welcomeee:"+customer.phoneNumber);
     const url = `${this.MOCK_BASE_URL}${this.CUSTOMERS}`;
-    return this.http.put<Customer>(`${this.MOCK_BASE_URL}${this.CUSTOMERS}/${customer.id}`, customer);
+    return this.http.put(`${this.MOCK_BASE_URL}${this.CUSTOMERS}/${customer.id}`, customer);
+  }
+
+
+  deleteCustomer(id : number){
+    this.http.delete(`${this.MOCK_BASE_URL}${this.CUSTOMERS}/${id}`).subscribe(
+      () => {
+        console.log('Item deleted successfully');
+      },
+      (error) => {
+        console.error('Error deleting item:', error);
+      }
+    );
   }
 }

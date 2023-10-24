@@ -28,7 +28,7 @@
             <td>{{customer.email}}</td>
             <td>
                 <button class="btn btn-primary" [routerLink]="['/customer', customer.id]" >Edit</button>
-                <button class="btn btn-warning">Delete</button>
+                <button class="btn btn-warning" (click)="deleteById(customer.id)">Delete</button>
             </td>
         </tr>
         <tr *ngIf="customers_list.length == 0">
@@ -49,7 +49,7 @@
             </div>
             <div class="modal-body">
                 <!--Template Driven form-->
-                <form (ngSubmit)="onSubmit()">
+                <form (ngSubmit)="onSubmit()" #myForm="ngForm">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" name="firstName"
@@ -73,7 +73,7 @@
                             required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary ">Save</button>
+                        <button type="submit"   [ng-disabled]="!myForm.form.valid" class="btn btn-primary ">Save</button>
                     </div>
                 </form>
             </div>

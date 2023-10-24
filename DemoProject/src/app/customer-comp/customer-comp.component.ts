@@ -42,7 +42,13 @@ export class CustomerCompComponent implements OnInit {
         //Reset the Form
         this.customer = new Customer();
       });
+      this.formModal.hide();
+      this.ngOnInit();
   }
 
+  deleteById(id:any){
+    this.customerService.deleteCustomer(id);
+    this.ngOnInit();
+  }
 
 }
